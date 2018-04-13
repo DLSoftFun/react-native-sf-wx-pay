@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		705355B120808FDB00D9F4F7 /* SFWXPA.m in Sources */ = {isa = PBXBuildFile; fileRef = 705355B020808FDB00D9F4F7 /* SFWXPA.m */; };
-		705355B220808FDB00D9F4F7 /* SFWXPA.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 705355AF20808FDB00D9F4F7 /* SFWXPA.h */; };
+		705355C12080A71C00D9F4F7 /* zqMd5.m in Sources */ = {isa = PBXBuildFile; fileRef = 705355B82080A71C00D9F4F7 /* zqMd5.m */; };
+		705355C22080A71C00D9F4F7 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 705355BF2080A71C00D9F4F7 /* libWeChatSDK.a */; };
+		705355C32080A71C00D9F4F7 /* SFWxpay.m in Sources */ = {isa = PBXBuildFile; fileRef = 705355C02080A71C00D9F4F7 /* SFWxpay.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,7 +19,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				705355B220808FDB00D9F4F7 /* SFWXPA.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -26,8 +26,14 @@
 
 /* Begin PBXFileReference section */
 		705355AC20808FDB00D9F4F7 /* libSFWXPA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSFWXPA.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		705355AF20808FDB00D9F4F7 /* SFWXPA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFWXPA.h; sourceTree = "<group>"; };
-		705355B020808FDB00D9F4F7 /* SFWXPA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFWXPA.m; sourceTree = "<group>"; };
+		705355B82080A71C00D9F4F7 /* zqMd5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zqMd5.m; sourceTree = "<group>"; };
+		705355B92080A71C00D9F4F7 /* SFWxpay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFWxpay.h; sourceTree = "<group>"; };
+		705355BA2080A71C00D9F4F7 /* zqMd5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zqMd5.h; sourceTree = "<group>"; };
+		705355BC2080A71C00D9F4F7 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		705355BD2080A71C00D9F4F7 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		705355BE2080A71C00D9F4F7 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		705355BF2080A71C00D9F4F7 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		705355C02080A71C00D9F4F7 /* SFWxpay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFWxpay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				705355C22080A71C00D9F4F7 /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,7 +51,11 @@
 		705355A320808FDB00D9F4F7 = {
 			isa = PBXGroup;
 			children = (
-				705355AE20808FDB00D9F4F7 /* SFWXPA */,
+				705355BB2080A71C00D9F4F7 /* lib */,
+				705355B92080A71C00D9F4F7 /* SFWxpay.h */,
+				705355C02080A71C00D9F4F7 /* SFWxpay.m */,
+				705355BA2080A71C00D9F4F7 /* zqMd5.h */,
+				705355B82080A71C00D9F4F7 /* zqMd5.m */,
 				705355AD20808FDB00D9F4F7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,13 +68,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		705355AE20808FDB00D9F4F7 /* SFWXPA */ = {
+		705355BB2080A71C00D9F4F7 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				705355AF20808FDB00D9F4F7 /* SFWXPA.h */,
-				705355B020808FDB00D9F4F7 /* SFWXPA.m */,
+				705355BC2080A71C00D9F4F7 /* WXApi.h */,
+				705355BD2080A71C00D9F4F7 /* WXApiObject.h */,
+				705355BE2080A71C00D9F4F7 /* WechatAuthSDK.h */,
+				705355BF2080A71C00D9F4F7 /* libWeChatSDK.a */,
 			);
-			path = SFWXPA;
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +136,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				705355B120808FDB00D9F4F7 /* SFWXPA.m in Sources */,
+				705355C32080A71C00D9F4F7 /* SFWxpay.m in Sources */,
+				705355C12080A71C00D9F4F7 /* zqMd5.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +253,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZXZC7G4VLE;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -251,6 +269,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZXZC7G4VLE;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
