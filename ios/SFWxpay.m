@@ -11,7 +11,7 @@
 #import "zqMd5.h"
 @implementation SFWxpay
 @synthesize bridge = _bridge;
-RCT_EXPORT_MODULE();
+RCT_EXPORT_MODULE(SFWXPay);
 -(instancetype)init{
   self = [super init];
   if(self){
@@ -35,10 +35,9 @@ RCT_EXPORT_MODULE();
  
   
 }
-RCT_EXPORT_METHOD(configure:(NSDictionary*)dic){
+RCT_EXPORT_METHOD(registerApp:(NSDictionary*)dic){
       [WXApi registerApp:[dic objectForKey:@"appid"]];
       self.appid = [dic objectForKey:@"appid"];
-      self.partnerId = [dic objectForKey:@"partnerId"];
 }
 RCT_EXPORT_METHOD(pay:(NSDictionary*)dic callback:(RCTResponseSenderBlock)callback){
     _callback = callback;
@@ -46,7 +45,7 @@ RCT_EXPORT_METHOD(pay:(NSDictionary*)dic callback:(RCTResponseSenderBlock)callba
                         self.appid,
                         [dic objectForKey:@"nonceStr"],
                         @"Sign=WXPay",
-                        self.partnerId,
+                        [dic objectForKey:@"partnerId"],
                         [dic objectForKey:@"prepayId"],
                         [[dic objectForKey:@"timeStamp"] intValue],
                         @"Q1W2E3R4T5Y6U7I8O9P0111111111111"];
