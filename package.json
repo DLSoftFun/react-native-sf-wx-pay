@@ -1,6 +1,6 @@
 {
     "name": "react-native-sf-wx-pay",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "微信支付",
     "main": "index.js",
     "scripts": {
