@@ -4,7 +4,7 @@
 
 # 安装
 * npm i react-native-sf-wx-pay
-
+* react native link  react-native-sf-wx-pay
 # 说明
 IOS 端
 * 1.0
