@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70532E3320B25A0D00FEA77F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 705355D72080AA7200D9F4F7 /* libz.tbd */; };
+		70532E3420B25A2100FEA77F /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 705355D52080AA6B00D9F4F7 /* libsqlite3.0.tbd */; };
 		705355C12080A71C00D9F4F7 /* zqMd5.m in Sources */ = {isa = PBXBuildFile; fileRef = 705355B82080A71C00D9F4F7 /* zqMd5.m */; };
 		705355C22080A71C00D9F4F7 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 705355BF2080A71C00D9F4F7 /* libWeChatSDK.a */; };
 		705355C32080A71C00D9F4F7 /* SFWxpay.m in Sources */ = {isa = PBXBuildFile; fileRef = 705355C02080A71C00D9F4F7 /* SFWxpay.m */; };
@@ -55,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70532E3420B25A2100FEA77F /* libsqlite3.0.tbd in Frameworks */,
+				70532E3320B25A0D00FEA77F /* libz.tbd in Frameworks */,
 				705355E02080AA9400D9F4F7 /* CFNetwork.framework in Frameworks */,
 				705355DE2080AA8D00D9F4F7 /* Security.framework in Frameworks */,
 				705355DC2080AA8300D9F4F7 /* CoreTelephony.framework in Frameworks */,

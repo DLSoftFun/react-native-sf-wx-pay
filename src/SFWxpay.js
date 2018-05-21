@@ -11,18 +11,18 @@ import {
  * @param nonceStr  随机串
  * @param timeStamp 时间戳
  **/
-var SFPay = NativeModules.SFWxpay
+var SFWxpay = NativeModules.SFWxpay
 export default class SFWxpay extends React.Component{
     // 注册
     static registerApp=(appid)=>{
-        SFPay.registerApp({
+        SFWxpay.registerApp({
             'appid':appid,
 
         })
     }
     // 支付
     static Pay=(partnerId,prepayId,nonceStr,timeStamp,callback)=>{
-        SFPay.pay({
+        SFWxpay.pay({
             'partnerId':partnerId,
             'prepayId':prepayId,
             'nonceStr':nonceStr,
