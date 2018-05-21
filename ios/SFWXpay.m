@@ -4,7 +4,7 @@
 //  Copyright © 2018年 Facebook. All rights reserved.
 //
 
-#import "SFWxpay.h"
+#import "SFWXpay.h"
 #import "WXApi.h"
 #import "zqMd5.h"
 @implementation SFWXpay
