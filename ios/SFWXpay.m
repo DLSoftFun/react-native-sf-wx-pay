@@ -7,9 +7,9 @@
 #import "SFWxpay.h"
 #import "WXApi.h"
 #import "zqMd5.h"
-@implementation SFWxpay
+@implementation SFWXpay
 @synthesize bridge = _bridge;
-RCT_EXPORT_MODULE(SFWxpay);
+RCT_EXPORT_MODULE(SFWXpay);
 -(instancetype)init{
   self = [super init];
   if(self){

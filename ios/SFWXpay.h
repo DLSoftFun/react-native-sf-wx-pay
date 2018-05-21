@@ -8,7 +8,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTEventDispatcher.h>
 #import <React/RCTBridgeModule.h>
-@interface SFWxpay : NSObject<RCTBridgeModule>
+@interface SFWXpay : NSObject<RCTBridgeModule>
 @property (nonatomic,strong) RCTResponseSenderBlock callback;
 @property (nonatomic,strong) NSString *appid;
 @property (nonatomic,strong) NSString *partnerId;
