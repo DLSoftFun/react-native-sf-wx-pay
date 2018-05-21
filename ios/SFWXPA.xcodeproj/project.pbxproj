@@ -12,8 +12,6 @@
 		705355C32080A71C00D9F4F7 /* SFWxpay.m in Sources */ = {isa = PBXBuildFile; fileRef = 705355C02080A71C00D9F4F7 /* SFWxpay.m */; };
 		705355D22080AA5A00D9F4F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 705355D12080AA5900D9F4F7 /* Foundation.framework */; };
 		705355D42080AA6000D9F4F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 705355D32080AA6000D9F4F7 /* UIKit.framework */; };
-		705355D62080AA6B00D9F4F7 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 705355D52080AA6B00D9F4F7 /* libsqlite3.0.tbd */; };
-		705355D82080AA7200D9F4F7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 705355D72080AA7200D9F4F7 /* libz.tbd */; };
 		705355DA2080AA7A00D9F4F7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 705355D92080AA7A00D9F4F7 /* SystemConfiguration.framework */; };
 		705355DC2080AA8300D9F4F7 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 705355DB2080AA8300D9F4F7 /* CoreTelephony.framework */; };
 		705355DE2080AA8D00D9F4F7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 705355DD2080AA8D00D9F4F7 /* Security.framework */; };
@@ -61,8 +59,6 @@
 				705355DE2080AA8D00D9F4F7 /* Security.framework in Frameworks */,
 				705355DC2080AA8300D9F4F7 /* CoreTelephony.framework in Frameworks */,
 				705355DA2080AA7A00D9F4F7 /* SystemConfiguration.framework in Frameworks */,
-				705355D82080AA7200D9F4F7 /* libz.tbd in Frameworks */,
-				705355D62080AA6B00D9F4F7 /* libsqlite3.0.tbd in Frameworks */,
 				705355D42080AA6000D9F4F7 /* UIKit.framework in Frameworks */,
 				705355D22080AA5A00D9F4F7 /* Foundation.framework in Frameworks */,
 				705355C22080A71C00D9F4F7 /* libWeChatSDK.a in Frameworks */,
