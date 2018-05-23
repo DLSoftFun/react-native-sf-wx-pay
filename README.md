@@ -26,7 +26,7 @@ IOS 端
 |prepayId|string|yes|订单id|null|
 |nonceStr|string|yes|随机串|null|
 |timeStamp|string|yes|时间戳|null|
-|sign|标签|yes|订单标签|null|
+|sign|string|yes|订单标签|null|
 
 # Methods
 |  Methods  |  Params  |  Param Types  |   description  |  Example  |
