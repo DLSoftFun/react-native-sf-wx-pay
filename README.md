@@ -22,7 +22,7 @@ IOS 端
 |  parameter  |  type  |  required  |   description  |  default  |
 |:-----|:-----|:-----|:-----|:-----|
 |appid|string|yes|微信支付id|null|
-|partnerId|string|yes|合作id|0|
+|partnerId|string|yes|合作id|null|
 |prepayId|string|yes|订单id|null|
 |nonceStr|string|yes|随机串|null|
 |timeStamp|string|yes|时间戳|null|
