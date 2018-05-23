@@ -6,7 +6,7 @@
 * npm i react-native-sf-wx-pay
 * react-native link  react-native-sf-wx-pay
 # 说明
-IOS 端
+## IOS 端
 * 1.0
 * 导入库集成SDK
 * 2.0
@@ -18,6 +18,25 @@ IOS 端
 * QuartzCore.framework
 * 3.0
 * 设置URL Scheme
+## Android 端
+* 1.0
+* 在SDK中找到jar包，导入，或直接添加依赖
+* compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.0.2' // 微信支付
+* 2.0
+* 配置清单文件
+* <!--权限-->
+* <uses-permission android:name="android.permission.INTERNET"/>
+* <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+* <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+* <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+* <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+* <!-- 微信支付 -->
+* <activity
+* android:name=".wxapi.WXPayEntryActivity"
+* android:exported="true"
+* android:launchMode="singleTop"/>
+
+
 # Props
 |  parameter  |  type  |  required  |   description  |  default  |
 |:-----|:-----|:-----|:-----|:-----|
