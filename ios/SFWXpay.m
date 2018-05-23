@@ -38,20 +38,9 @@ RCT_EXPORT_METHOD(registerApp:(NSDictionary*)dic){
       self.appid = [dic objectForKey:@"appid"];
 }
 RCT_EXPORT_METHOD(pay:(NSDictionary*)dic callback:(RCTResponseSenderBlock)callback){
-    self.partnerId=[dic objectForKey:@"partnerId"],
     _callback = callback;
-//    NSString *string = [NSString stringWithFormat:@"appid=%@&noncestr=%@&package=%@&partnerid=%@&prepayid=%@&timestamp=%d&key=%@",
-//                        self.appid,
-//                        [dic objectForKey:@"nonceStr"],
-//                        @"Sign=WXPay",
-//                        [dic objectForKey:@"partnerId"],
-//                        [dic objectForKey:@"prepayId"],
-//                        [[dic objectForKey:@"timeStamp"] intValue],
-//                        @"Q1W2E3R4T5Y6U7I8O9P0111111111111"];
-//    NSString *sign = [zqMd5 md5_16_low:string];
-  
     PayReq* req             = [[PayReq alloc] init];
-    req.partnerId           = self.partnerId;
+    req.partnerId           = [dic objectForKey:@"partnerId"];
     req.prepayId            = [dic objectForKey:@"prepayId"];
     req.nonceStr            = [dic objectForKey:@"nonceStr"];
     req.timeStamp           = [[dic objectForKey:@"timeStamp"] intValue];
