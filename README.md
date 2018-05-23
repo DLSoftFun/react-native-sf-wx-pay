@@ -25,17 +25,19 @@
 * 2.0
 * 配置清单文件
 * 权限
-* <uses-permission android:name="android.permission.INTERNET"/>
-* <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-* <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-* <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-* <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-*  微信支付
-* <activity
-* android:name=".wxapi.WXPayEntryActivity"
-* android:exported="true"
-* android:launchMode="singleTop"/>
-
+```
+<!--权限-->
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<!-- 微信支付 -->
+<activity
+android:name=".wxapi.WXPayEntryActivity"
+android:exported="true"
+android:launchMode="singleTop"/>
+```
 
 # Props
 |  parameter  |  type  |  required  |   description  |  default  |
