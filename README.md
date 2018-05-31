@@ -24,7 +24,6 @@
 * compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.0.2' // 微信支付
 * 2.0
 * 配置清单文件
-* 权限
 ```
 <!--权限-->
 <uses-permission android:name="android.permission.INTERNET"/>
