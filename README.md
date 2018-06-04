@@ -71,6 +71,6 @@ android:launchMode="singleTop"/>
 |  Methods  |  Params  |  Param Types  |   description  |  Example  |
 |:-----|:-----|:-----|:-----|:-----|
 |registerApp|string|string|微信注册appid|SFWxpay.registerApp('')|
-|Pay|dictionary|dictionary|需要传递的参数|SFWxpay.Pay('','',()=>{'支付成功回调'})|
+|Pay|dictionary|dictionary|需要传递的参数|SFWxpay.Pay(‘填写多个字符',()=>{'支付成功回调 回调提示(1,'支付成功')'},()=>{'支付失败回调(0,数组(包含失败码和失败提示))',()=>{'用户放弃支付回调(2,'支付取消')'})|
 
 
