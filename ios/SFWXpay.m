@@ -21,20 +21,6 @@ RCT_EXPORT_MODULE(SFWXpay);
 -(void)dealloc{
   [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-#pragma mark - 收到支付成功的消息后作相应的处理
-- (void)getOrderPayResult:(NSNotification *)notification
-
-{
-    if ([notification.object isEqualToString:@"success"]) {
-        _callback(@[[NSNull null],@"1"]);
-    } else if ([notification.object isEqualToString:@"fail"]){
-        _callback(@[[NSNull null],@"0"]);
-    }else{
-        _callback(@[[NSNull null],@"2"]);
-    }
- 
-  
-}
 RCT_EXPORT_METHOD(registerApp:(NSDictionary*)dic){
       [WXApi registerApp:[dic objectForKey:@"appid"]];
 }
@@ -50,14 +36,13 @@ RCT_EXPORT_METHOD(pay:(NSDictionary*)dic callback:(RCTResponseSenderBlock)callba
     [WXApi sendReq:req];
 
 }
+#pragma mark - 收到支付成功的消息后作相应的处理
 - (void)onResp:(BaseResp *)resp
 
 {
     //    支付结果回调
-    
     if([resp isKindOfClass:[PayResp class]]){
         switch (resp.errCode) {
-                
             case WXSuccess:{
                 _callback(@[[NSNull null],@"1"]);
                 NSLog(@"支付成功");
@@ -70,11 +55,13 @@ RCT_EXPORT_METHOD(pay:(NSDictionary*)dic callback:(RCTResponseSenderBlock)callba
                 break;
             }
             default:{
+                NSString* failCode = [NSString stringWithFormat:@"%d",resp.errCode];
+                NSString* failMsg = [NSString stringWithFormat:@"errorStr: %@",resp.errStr];
+                NSArray * event = @[failCode,failMsg];
+                _callback(@[[NSNull null],event]);
                 NSLog(@"支付失败");
-                _callback(@[[NSNull null],@"0"]);
                 break;
             }
-                
         }
         
     }

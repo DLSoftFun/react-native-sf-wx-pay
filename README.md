@@ -18,6 +18,25 @@
 * QuartzCore.framework
 * 3.0
 * 设置URL Scheme
+* 4.0 在AppDelegate 添加#import <SFWXpay.h> 添加
+```
+- (BOOL)application:(UIApplication *)application
+openURL:(NSURL *)url
+sourceApplication:(NSString *)sourceApplication
+annotation:(id)annotation {
+// 处理微信的支付结果
+[SFWXpay WxHandleOpenURL:url];
+
+return YES;
+}
+
+// NOTE: 9.0以后使用新API接口
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
+{
+[SFWXpay WxHandleOpenURL:url];
+return YES;
+}
+```
 ## Android 端
 * 1.0
 * 在SDK中找到jar包，导入，或直接添加依赖

@@ -21,7 +21,7 @@ export default class SFWxpay extends React.Component{
         })
     }
     // 支付
-    static Pay=(partnerId,prepayId,nonceStr,timeStamp,sign,callback)=>{
+    static Pay=(partnerId,prepayId,nonceStr,timeStamp,sign,sucessCallback,failCallback,cancelCallback)=>{
         SFWXpay.pay({
             'partnerId':partnerId,
             'prepayId':prepayId,
@@ -32,12 +32,20 @@ export default class SFWxpay extends React.Component{
             if(error){
                 console.error(error);
             }else{
-                if(events==0){
-                }else {
-                    if(callback){
-                        callback()
+                if(events==1){
+                    if(sucessCallback){
+                            sucessCallback(1,'支付成功')
+                    }else if(events==2){
+                        if(cancelCallback){
+                            cancelCallback(2,'支付取消')
+                        }
+                    }else{
+                        if(failCallback){
+                            failCallback(0,events)
+                        }
                     }
                 }
+             
             }
         })
     }
