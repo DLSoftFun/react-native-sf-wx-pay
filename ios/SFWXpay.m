@@ -18,9 +18,18 @@ RCT_EXPORT_MODULE(SFWXpay);
   }
   return self;
 }
+
 -(void)dealloc{
   [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+- (void)getOrderPayResult:(NSNotification *)notification
+{
+    NSString * errcode = [NSString stringWithFormat:@"%ld",[notification.userInfo[@"respCode"]integerValue]];
+    NSString* errMessage = notification.userInfo[@"respStr"];
+    [self.bridge.eventDispatcher sendAppEventWithName:@"WeChatResp"
+                                                 body:@{@"errCode ": errcode,@"errMessage": errMessage}];
+}
+
 RCT_EXPORT_METHOD(registerApp:(NSDictionary*)dic){
       [WXApi registerApp:[dic objectForKey:@"appid"]];
 }

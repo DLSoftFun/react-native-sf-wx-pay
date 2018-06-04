@@ -3,7 +3,7 @@ import {
     NativeModules,
     NativeAppEventEmitter
   } from 'react-native';
-
+  import RCTDeviceEventEmitter from 'RCTDeviceEventEmitter';  
 /**
  * @param appid 微信申请支付id
  * @param partnerId 合作id
@@ -21,33 +21,14 @@ export default class SFWxpay extends React.Component{
         })
     }
     // 支付
-    static Pay=(partnerId,prepayId,nonceStr,timeStamp,sign,sucessCallback,failCallback,cancelCallback)=>{
+    static Pay=(partnerId,prepayId,nonceStr,timeStamp,sign)=>{
         SFWXpay.pay({
             'partnerId':partnerId,
             'prepayId':prepayId,
             'nonceStr':nonceStr,
             'timeStamp':timeStamp,
             'sign':sign
-        },(error,events)=>{
-            if(error){
-                console.error(error);
-            }else{
-                if(events==1){
-                    if(sucessCallback){
-                            sucessCallback(1,'支付成功')
-                    }else if(events==2){
-                        if(cancelCallback){
-                            cancelCallback(2,'支付取消')
-                        }
-                    }else{
-                        if(failCallback){
-                            failCallback(0,events)
-                        }
-                    }
-                }
-             
-            }
         })
+    
     }
-
 }
