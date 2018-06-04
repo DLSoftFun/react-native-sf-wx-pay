@@ -12,4 +12,5 @@
 @property (nonatomic,strong) RCTResponseSenderBlock callback;
 @property (nonatomic,strong) NSString *appid;
 @property (nonatomic,strong) NSString *partnerId;
++(BOOL)WxHandleOpenURL:(NSURL *)url;
 @end

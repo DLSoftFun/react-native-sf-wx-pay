@@ -25,17 +25,18 @@ RCT_EXPORT_MODULE(SFWXpay);
 - (void)getOrderPayResult:(NSNotification *)notification
 
 {
-  if ([notification.object isEqualToString:@"success"]) {
-       _callback(@[[NSNull null],@"1"]);
-  } else {
-       _callback(@[[NSNull null],@"0"]);
-  }
+    if ([notification.object isEqualToString:@"success"]) {
+        _callback(@[[NSNull null],@"1"]);
+    } else if ([notification.object isEqualToString:@"fail"]){
+        _callback(@[[NSNull null],@"0"]);
+    }else{
+        _callback(@[[NSNull null],@"2"]);
+    }
  
   
 }
 RCT_EXPORT_METHOD(registerApp:(NSDictionary*)dic){
       [WXApi registerApp:[dic objectForKey:@"appid"]];
-      self.appid = [dic objectForKey:@"appid"];
 }
 RCT_EXPORT_METHOD(pay:(NSDictionary*)dic callback:(RCTResponseSenderBlock)callback){
     _callback = callback;
@@ -48,5 +49,35 @@ RCT_EXPORT_METHOD(pay:(NSDictionary*)dic callback:(RCTResponseSenderBlock)callba
     req.sign                = [dic objectForKey:@"sign"];
     [WXApi sendReq:req];
 
+}
+- (void)onResp:(BaseResp *)resp
+
+{
+    //    支付结果回调
+    
+    if([resp isKindOfClass:[PayResp class]]){
+        switch (resp.errCode) {
+                
+            case WXSuccess:{
+                _callback(@[[NSNull null],@"1"]);
+                NSLog(@"支付成功");
+                break;
+            }
+            case WXErrCodeUserCancel:
+            {
+                _callback(@[[NSNull null],@"2"]);
+                NSLog(@"取消支付");
+                break;
+            }
+            default:{
+                NSLog(@"支付失败");
+                _callback(@[[NSNull null],@"0"]);
+                break;
+            }
+                
+        }
+        
+    }
+    
 }
 @end
