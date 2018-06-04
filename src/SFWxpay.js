@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import {
     NativeModules,
     NativeAppEventEmitter
-  } from 'react-native';
-  import RCTDeviceEventEmitter from 'RCTDeviceEventEmitter';  
+  } from 'react-native'; 
 /**
  * @param appid 微信申请支付id
  * @param partnerId 合作id

@@ -18,14 +18,14 @@
 * QuartzCore.framework
 * 3.0
 * 设置URL Scheme
-* 4.0 在AppDelegate 添加#import <SFWXpay.h> 添加
+* 4.0 在AppDelegate 添加
 ```
 - (BOOL)application:(UIApplication *)application
 openURL:(NSURL *)url
 sourceApplication:(NSString *)sourceApplication
 annotation:(id)annotation {
 // 处理微信的支付结果
-[SFWXpay WxHandleOpenURL:url];
+[WXApi handleOpenURL:url delegate:(id<WXApiDelegate>)self];
 
 return YES;
 }
@@ -33,10 +33,45 @@ return YES;
 // NOTE: 9.0以后使用新API接口
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
 {
-[SFWXpay WxHandleOpenURL:url];
+[WXApi handleOpenURL:url delegate:(id<WXApiDelegate>)self];
 return YES;
 }
+
+//微信回调,有支付结果的时候会回调这个方法
+
+- (void)onResp:(BaseResp *)resp
+
+{
+//    支付结果回调
+if([resp isKindOfClass:[PayResp class]]){
+NSDictionary * dic = [[NSDictionary alloc]initWithObjectsAndKeys:[NSString stringWithFormat:@"%d",resp.errCode],@"respCode",resp.errStr,@"respStr",nil];
+NSNotification *notification = [NSNotification notificationWithName:@"ORDER_PAY_NOTIFICATION" object:nil userInfo:dic];
+[[NSNotificationCenter defaultCenter] postNotification:notification];
+}
+
+}
 ```
+* 5.0 在react 添加监听支付监听
+```
+import { NativeAppEventEmitter } from 'react-native';
+NativeAppEventEmitter.addListener(
+'WeChatResp',
+(content) => {
+//数据内容
+}
+}
+);
+this.listener && this.listener.remove();
+
+
+回调中errCode值列表：
+
+名称      描述    解决方案
+0       成功    展示成功页面
+-1      错误    可能的原因：签名错误、未注册APPID、项目设置APPID不正确、注册的APPID与设置的不匹配、其他异常等。
+-2    用户取消    无需处理。发生场景：用户不支付了，点击取消，返回APP。
+```
+
 ## Android 端
 * 1.0
 * 在SDK中找到jar包，导入，或直接添加依赖
@@ -71,6 +106,6 @@ android:launchMode="singleTop"/>
 |  Methods  |  Params  |  Param Types  |   description  |  Example  |
 |:-----|:-----|:-----|:-----|:-----|
 |registerApp|string|string|微信注册appid|SFWxpay.registerApp('')|
-|Pay|dictionary|dictionary|需要传递的参数|SFWxpay.Pay(‘填写多个字符',()=>{'支付成功回调 回调提示(1,'支付成功')'},()=>{'支付失败回调(0,数组(包含失败码和失败提示))',()=>{'用户放弃支付回调(2,'支付取消')'})|
+|Pay|dictionary|dictionary|需要传递的参数|SFWxpay.Pay(‘填写多个字符')|
 
 
