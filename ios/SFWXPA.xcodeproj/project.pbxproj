@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		705355C12080A71C00D9F4F7 /* zqMd5.m in Sources */ = {isa = PBXBuildFile; fileRef = 705355B82080A71C00D9F4F7 /* zqMd5.m */; };
 		705355C22080A71C00D9F4F7 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 705355BF2080A71C00D9F4F7 /* libWeChatSDK.a */; };
-		705355C32080A71C00D9F4F7 /* SFWXpay.m in Sources */ = {isa = PBXBuildFile; fileRef = 705355C02080A71C00D9F4F7 /* SFWXpay.m */; };
+		705355C32080A71C00D9F4F7 /* SFWXPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 705355C02080A71C00D9F4F7 /* SFWXPay.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,13 +27,13 @@
 /* Begin PBXFileReference section */
 		705355AC20808FDB00D9F4F7 /* libSFWXPA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSFWXPA.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		705355B82080A71C00D9F4F7 /* zqMd5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zqMd5.m; sourceTree = "<group>"; };
-		705355B92080A71C00D9F4F7 /* SFWXpay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFWXpay.h; sourceTree = "<group>"; };
+		705355B92080A71C00D9F4F7 /* SFWXPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFWXPay.h; sourceTree = "<group>"; };
 		705355BA2080A71C00D9F4F7 /* zqMd5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zqMd5.h; sourceTree = "<group>"; };
 		705355BC2080A71C00D9F4F7 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		705355BD2080A71C00D9F4F7 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		705355BE2080A71C00D9F4F7 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
 		705355BF2080A71C00D9F4F7 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
-		705355C02080A71C00D9F4F7 /* SFWXpay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFWXpay.m; sourceTree = "<group>"; };
+		705355C02080A71C00D9F4F7 /* SFWXPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFWXPay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +52,8 @@
 			isa = PBXGroup;
 			children = (
 				705355BB2080A71C00D9F4F7 /* lib */,
-				705355B92080A71C00D9F4F7 /* SFWXpay.h */,
-				705355C02080A71C00D9F4F7 /* SFWXpay.m */,
+				705355B92080A71C00D9F4F7 /* SFWXPay.h */,
+				705355C02080A71C00D9F4F7 /* SFWXPay.m */,
 				705355BA2080A71C00D9F4F7 /* zqMd5.h */,
 				705355B82080A71C00D9F4F7 /* zqMd5.m */,
 				705355AD20808FDB00D9F4F7 /* Products */,
@@ -144,7 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				705355C32080A71C00D9F4F7 /* SFWXpay.m in Sources */,
+				705355C32080A71C00D9F4F7 /* SFWXPay.m in Sources */,
 				705355C12080A71C00D9F4F7 /* zqMd5.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

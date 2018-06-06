@@ -4,12 +4,12 @@
 //  Copyright © 2018年 Facebook. All rights reserved.
 //
 
-#import "SFWXpay.h"
+#import "SFWXPay.h"
 #import "WXApi.h"
 #import "zqMd5.h"
-@implementation SFWXpay
+@implementation SFWXPay
 @synthesize bridge = _bridge;
-RCT_EXPORT_MODULE(SFWXpay);
+RCT_EXPORT_MODULE(SFWXPay);
 -(instancetype)init{
   self = [super init];
   if(self){

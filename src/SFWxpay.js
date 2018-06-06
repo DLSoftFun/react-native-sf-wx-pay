@@ -11,7 +11,7 @@ import {
  * @param timeStamp 时间戳
  * @param sign 标签
  **/
-var SFWXpay = NativeModules.SFWXpay
+var SFWXpay = NativeModules.SFWXPay
 export default class SFWxpay extends React.Component{
     // 注册
     static registerApp=(appid)=>{
