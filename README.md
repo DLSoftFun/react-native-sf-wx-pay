@@ -48,7 +48,7 @@ if([resp.errStr isEqual:[NSNull null]]){
 resp.errStr=@" ";
 }
 NSDictionary * dic = [[NSDictionary alloc]initWithObjectsAndKeys:[NSString stringWithFormat:@"%d",resp.errCode],@"respCode",resp.errStr,@"respStr",nil];
-NSNotification *notification = [NSNotification notificationWithName:@"ORDER_PAY_NOTIFICATION" object:nil userInfo:dic];
+NSNotification *notification = [NSNotification notificationWithName:@"PAY_WECHAT" object:nil userInfo:dic];
 [[NSNotificationCenter defaultCenter] postNotification:notification];
 }
 

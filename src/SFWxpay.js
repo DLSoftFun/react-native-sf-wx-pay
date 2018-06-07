@@ -14,15 +14,15 @@ import {
 var SFWXpay = NativeModules.SFWXPay
 export default class SFWxpay extends React.Component{
     // 注册
-    static registerApp=(appid)=>{
+    static registerApp=(appid,partnerId)=>{
         SFWXpay.registerApp({
-            'appid':appid
+            'appid':appid,
+            'partnerId':partnerId
         })
     }
     // 支付
-    static Pay=(partnerId,prepayId,nonceStr,timeStamp,sign)=>{
+    static Pay=(prepayId,nonceStr,timeStamp,sign)=>{
         SFWXpay.pay({
-            'partnerId':partnerId,
             'prepayId':prepayId,
             'nonceStr':nonceStr,
             'timeStamp':timeStamp,

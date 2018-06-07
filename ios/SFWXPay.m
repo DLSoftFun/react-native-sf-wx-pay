@@ -14,7 +14,7 @@ RCT_EXPORT_MODULE(SFWXPay);
   self = [super init];
   if(self){
     
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getOrderPayResult:) name:@"ORDER_PAY_NOTIFICATION" object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getOrderPayResult:) name:@"PAY_WECHAT" object:nil];
   }
   return self;
 }
@@ -28,16 +28,17 @@ RCT_EXPORT_MODULE(SFWXPay);
     NSString * errcode = [NSString stringWithFormat:@"%ld",[notification.userInfo[@"respCode"]integerValue]];
     NSString* errMessage = notification.userInfo[@"respStr"];
     [self.bridge.eventDispatcher sendAppEventWithName:@"WeChatResp"
-                                                 body:@{@"errCode ": errcode,@"errMessage": errMessage}];
+                                                 body:@{@"errCode":errcode,@"errMessage": errMessage}];
 }
 #pragma mark - 收到支付成功的消息后作相应的处理
 RCT_EXPORT_METHOD(registerApp:(NSDictionary*)dic){
       [WXApi registerApp:[dic objectForKey:@"appid"]];
+      self.partnerId=[dic objectForKey:@"partnerId"];
 }
-RCT_EXPORT_METHOD(pay:(NSDictionary*)dic callback:(RCTResponseSenderBlock)callback){
-    _callback = callback;
+RCT_EXPORT_METHOD(pay:(NSDictionary*)dic){
+
     PayReq* req             = [[PayReq alloc] init];
-    req.partnerId           = [dic objectForKey:@"partnerId"];
+    req.partnerId           = self.partnerId;
     req.prepayId            = [dic objectForKey:@"prepayId"];
     req.nonceStr            = [dic objectForKey:@"nonceStr"];
     req.timeStamp           = [[dic objectForKey:@"timeStamp"] intValue];
