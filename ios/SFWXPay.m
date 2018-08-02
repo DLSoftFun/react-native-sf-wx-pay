@@ -28,7 +28,7 @@ RCT_EXPORT_MODULE(SFWXPay);
     NSString * errcode = [NSString stringWithFormat:@"%ld",[notification.userInfo[@"respCode"]integerValue]];
     NSString* errMessage = notification.userInfo[@"respStr"];
     [self.bridge.eventDispatcher sendAppEventWithName:@"WeChatResp"
-                                                 body:@{@"errCode":errcode,@"errMessage": errMessage}];
+                                                 body:@{@"errCode":errcode,@"errMessage":  }];
 }
 #pragma mark - 收到支付成功的消息后作相应的处理
 RCT_EXPORT_METHOD(registerApp:(NSDictionary*)dic){

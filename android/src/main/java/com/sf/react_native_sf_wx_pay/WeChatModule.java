@@ -89,7 +89,7 @@ public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEv
         api.registerApp(this.appId);
     }
     @ReactMethod
-    private void Pay(ReadableMap data,Callback callback){
+    private void pay(ReadableMap data){
         PayReq request = new PayReq();
         request.appId = appId;
         request.partnerId = partnerId;
@@ -114,7 +114,21 @@ public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEv
 //        String stringA = "appid="+request.appId+"&noncestr="+request.nonceStr+"&package=Sign=WXPay"+"&partnerid="+request.partnerId+"&prepayid="+request.prepayId+"&timestamp="+request.timeStamp+"&key="+key;
 //        request.sign = MD5(stringA).toUpperCase();
 //                                request.sign = jresult.getString("sign");
-        callback.invoke(api.sendReq(request) ? null : "WeChat API invoke returns false.");
+        if(api.sendReq(request)){
+            WritableMap map = Arguments.createMap();
+            map.putInt("errCode",0);
+            map.putString("errMessage","请求成功");
+            this.getReactApplicationContext()
+                    .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                    .emit("WeChatResp", map);
+        }else{
+            WritableMap map = Arguments.createMap();
+            map.putInt("errCode",-100);
+            map.putString("errMessage","请求失败");
+            this.getReactApplicationContext()
+                    .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                    .emit("WeChatResp", map);
+        }
     }
 
     public final static String MD5(String s) {
