@@ -66,7 +66,6 @@ public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEv
 
     @Override
     public void onReq(BaseReq baseReq) {
-
     }
 
     @Override
@@ -80,6 +79,18 @@ public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEv
                     .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                     .emit("WeChatResp", map);
         }
+    }
+    public static WeChatModule getModule(){
+        for (WeChatModule mod : modules) {
+            return mod;
+        }
+        return null;
+    }
+    public static String getAppid(){
+        for (WeChatModule mod : modules) {
+            return mod.appId;
+        }
+        return "";
     }
     @ReactMethod
     public void registerApp(ReadableMap data) {
@@ -116,15 +127,15 @@ public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEv
 //                                request.sign = jresult.getString("sign");
         if(api.sendReq(request)){
             WritableMap map = Arguments.createMap();
-            map.putInt("errCode",0);
-            map.putString("errMessage","请求成功");
+            map.putInt("errCode",1);
+            map.putString("errMessage","请求支付成功");
             this.getReactApplicationContext()
                     .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                     .emit("WeChatResp", map);
         }else{
             WritableMap map = Arguments.createMap();
             map.putInt("errCode",-100);
-            map.putString("errMessage","请求失败");
+            map.putString("errMessage","请求支付失败");
             this.getReactApplicationContext()
                     .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                     .emit("WeChatResp", map);
