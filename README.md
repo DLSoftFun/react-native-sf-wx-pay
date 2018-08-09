@@ -44,7 +44,7 @@ return YES;
 {
 //    支付结果回调
 if([resp isKindOfClass:[PayResp class]]){
-if([resp.errStr isEqual:[NSNull null]]){
+if(resp.errCode==0){
 resp.errStr=@" ";
 }
 NSDictionary * dic = [[NSDictionary alloc]initWithObjectsAndKeys:[NSString stringWithFormat:@"%d",resp.errCode],@"respCode",resp.errStr,@"respStr",nil];
